@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/* 
- * This is an improved orbit script based on the MouseOrbitImproved script found
- * on the unity community wiki. It should run smoother then the original version
- * 
- * */
+//I have made slight changes to the camera controller script by adding a new public float for the y axis min and which will limit how far the camera can pan side to side
 [AddComponentMenu("Camera-Control/Mouse drag Orbit with zoom")]
 public class DragOrbitImproved : MonoBehaviour
 {
@@ -13,7 +9,7 @@ public class DragOrbitImproved : MonoBehaviour
 	public float distance = 500.0f;
 	public float xSpeed = 0.1f;
 	public float ySpeed = 10.0f;
-	
+	// this sets the float for the variables y min and max limits
 	public float yMinLimit = -20f;
 	public float yMaxLimit = 80f;
 	
@@ -63,7 +59,7 @@ public class DragOrbitImproved : MonoBehaviour
 			
 			rotationYAxis += velocityX;
 			rotationXAxis -= velocityY;
-			
+			//This clamps the rotation on both the x and y axis.
 			rotationXAxis = ClampAngle(rotationXAxis, yMinLimit, yMaxLimit);
 			rotationYAxis = ClampAngle(rotationYAxis, xMinLimit, xMaxLimit);
 			

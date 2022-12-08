@@ -31,9 +31,6 @@ public class OnMouseOverColor : MonoBehaviour
        //this resets the material to standard mat when the mouse is no longer over mesh. 
        m_Renderer.material = standardMat;
     }
-    public void OnMouseDown()
-    {
-
-    }
+   
      
 }
