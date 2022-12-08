@@ -16,10 +16,13 @@ public class playRandomSound : MonoBehaviour
        
     }
     
-    void OnMouseDown() {
+    public void PlaySound() 
+    {
 
         myClip.clip = audioClipArray[Random.Range(0, audioClipArray.Length)];
+        
         myClip.Play();
+        Debug.Log ("stonenoise");
 
     }
 }
